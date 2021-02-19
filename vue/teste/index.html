@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/vue.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Relatório de Vendas</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- <table class="mt-5 table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Qtde</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="sale in sales">
+                    <td>{{ sale.id }}</td>
+                    <td>{{ sale.name }}</td>
+                    <td v-money="'R$'">{{ sale.price }}</td>
+                    <td>{{ sale.qtde }}</td>
+                    <td>{{ sale.date }}</td>
+                </tr>
+            </tbody>
+        </table> -->
+        <script>
+            new Vue({
+                el: '#app',
+                header: {
+
+                },
+                data: {
+                    title: 'Relatorio de Vendas',
+                    sales: null
+                },
+                methods: {
+                    chave: 'eDoG+DK/5Fbs2dUOMm3ObGOlSnMb3yNnubMbiF/EXPE=',
+                    getSales() {
+                        fetch('https://api.imoview.com.br/Imovel/RetornarTiposImoveisDisponiveis')
+                            .then(resp => resp.json())
+                            .then(data => console.log(data))
+                    }
+                },
+
+                mounted() {
+                    this.getSales()
+                }
+            })
+        </script>
+</body>
+
+</html>
