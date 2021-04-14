@@ -1,0 +1,50 @@
+aside.logo {
+    background-color: $cor-branca;
+}
+
+aside.logo a {
+    display: block;
+    padding: 22px 15px;
+}
+
+aside.logo img {
+    margin: 0% 0% 1% 6%;
+    width: 262px;
+}
+
+.divMenu {
+    width: 49%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.divMenu h5 {
+    text-decoration: none;
+    color: #a6a6a6;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: right;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 14% 0% 0%;
+}
+
+.divMenu p {
+    text-decoration: none;
+    color: #df0209;
+    font-weight: 400;
+    font-size: 38px;
+    margin: 0;
+    text-align: right;
+    padding: 0% 14% 0% 0%;
+}
+
+@media(max-width: $largura-sm-max) {
+    aside.logo {
+        display: flex;
+        justify-content: center;
+    }
+    aside.logo img {
+        padding: 0px 15px;
+        width: $largura-barra-lateral;
+    }
+}
